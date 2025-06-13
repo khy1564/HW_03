@@ -32,7 +32,7 @@ public:
 
 	~SimpleVector()
 	{
-		release()
+		release();
 	};
 
 	void push_back(const T& value)
