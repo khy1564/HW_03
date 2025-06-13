@@ -82,16 +82,17 @@ public:
 		}
 	}
 
-	void release()
-	{
-		delete[] data;
-		data = nullptr;
-	}
 
 private:
 	T* data;
 	int currentSize;
 	int currentCapacity;
+
+	void release()
+	{
+		delete[] data;
+		data = nullptr;
+	}
 
 	void resize(int newCapacity) 
 	{
@@ -101,6 +102,7 @@ private:
 		}
 
 		T* newData = new T[newCapacity];
+
 		for (int i = 0; i < currentSize; i++)
 		{
 			newData[i] = data[i];
