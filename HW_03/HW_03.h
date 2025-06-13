@@ -32,7 +32,7 @@ public:
 
 	~SimpleVector()
 	{
-		delete[] data;
+		release()
 	};
 
 	void push_back(const T& value)
@@ -82,6 +82,12 @@ public:
 		}
 	}
 
+	void release()
+	{
+		delete[] data;
+		data = nullptr;
+	}
+
 private:
 	T* data;
 	int currentSize;
@@ -100,7 +106,7 @@ private:
 			newData[i] = data[i];
 		}
 
-		delete[] data;
+		release();
 		data = newData;
 		currentCapacity = newCapacity;
 	}

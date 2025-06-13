@@ -3,6 +3,9 @@
 
 int main()
 {
+	// 힙 메모리 누수 감지 코드
+	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	
 	SimpleVector<int> sim(3);
 
 	sim.push_back(5);
